@@ -24,7 +24,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <BrowserRouter basename="/BlinkBeat-Beauty-Salon">
+    <HashRouter>
       <Router>
         <ScrollToTop />
         <div className="min-h-screen">
@@ -54,7 +54,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </BrowserRouter>  
+    </HashRouter>  
   );
 }
 
