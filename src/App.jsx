@@ -1,7 +1,7 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import About from './assets/About';
+import About from './components/About'; // Fixed path
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
@@ -24,13 +24,13 @@ function ScrollToTop() {
 
 function App() {
   return (
-    
-      <Router basename="/BlinkBeat-Beauty-Salon">
-        <ScrollToTop />
-        <div className="min-h-screen">
-          <Routes>
-            
-            <Route path="/" element={
+    <Router basename="/BlinkBeat-Beauty-Salon">
+      <ScrollToTop />
+      <div className="min-h-screen">
+        <Routes>
+          <Route 
+            path="/" 
+            element={
               <>
                 <Navbar />
                 <Hero />
@@ -41,20 +41,42 @@ function App() {
                 <ContactSection />
                 <Footer />
               </>
-            } />
-            
-            
-            <Route path="/items" element={
+            } 
+          />
+          
+          <Route 
+            path="/items" 
+            element={
               <>
                 <Navbar />
                 <Item />
                 <Footer />
               </>
-            } />
-          </Routes>
-        </div>
-      </Router>
-      
+            } 
+          />
+          
+          {/* Add a catch-all route for 404 */}
+          <Route 
+            path="*" 
+            element={
+              <>
+                <Navbar />
+                <div className="pt-24 min-h-screen flex items-center justify-center">
+                  <div className="text-center">
+                    <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+                    <p className="text-lg">The page you're looking for doesn't exist.</p>
+                    <a href="/" className="mt-6 inline-block bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition">
+                      Go Back Home
+                    </a>
+                  </div>
+                </div>
+                <Footer />
+              </>
+            } 
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
