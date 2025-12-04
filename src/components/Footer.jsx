@@ -76,8 +76,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="" className='hover:text-pink-500 text-gray-300'>FACEBOOK</a></li>
               <li><a href="" className='hover:text-pink-500 text-gray-300'>INSTAGRAM</a></li>
-              <li><a href="" className='hover:text-pink-500 text-gray-300'>LINKEDIN</a></li>
-              <li><a href="" className='hover:text-pink-500 text-gray-300'>GITHUB</a></li>
+              <li><a href="https://www.linkedin.com/in/kavindu-wijesekara-93a8a6385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blanck" className='hover:text-pink-500 text-gray-300'>LINKEDIN</a></li>
+              <li><a href="https://github.com/Kavindu-Wijesekara-01" target="_blanck"className='hover:text-pink-500 text-gray-300'>GITHUB</a></li>
             </ul>
           </div>
 
