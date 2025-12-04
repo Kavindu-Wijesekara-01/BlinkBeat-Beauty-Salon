@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base:"/BlinkBeat-Beauty-Salon",
+  base:"/BlinkBeat-Beauty-Salon/",
 })

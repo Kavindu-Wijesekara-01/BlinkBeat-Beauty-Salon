@@ -1,6 +1,6 @@
 {
   "name": "pro14",
-  "homepage": "https://Kavindu-Wijesekara-01.github.io/BlinkBeat-Beauty-Salon/",
+  "homepage": "https://kavindu-wijesekara-01.github.io/BlinkBeat-Beauty-Salon",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",

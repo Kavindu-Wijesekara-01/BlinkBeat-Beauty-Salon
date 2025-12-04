@@ -24,35 +24,37 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen">
-        <Routes>
-          
-          <Route path="/" element={
-            <>
-              <Navbar />
-              <Hero />
-              <Services />
-              <About />
-              <Gallery />
-              <TeamMembers />
-              <ContactSection />
-              <Footer />
-            </>
-          } />
-          
-          
-          <Route path="/items" element={
-            <>
-              <Navbar />
-              <Item />
-              <Footer />
-            </>
-          } />
-        </Routes>
-      </div>
-    </Router>
+    <BrowserRouter basename="/BlinkBeat-Beauty-Salon">
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen">
+          <Routes>
+            
+            <Route path="/" element={
+              <>
+                <Navbar />
+                <Hero />
+                <Services />
+                <About />
+                <Gallery />
+                <TeamMembers />
+                <ContactSection />
+                <Footer />
+              </>
+            } />
+            
+            
+            <Route path="/items" element={
+              <>
+                <Navbar />
+                <Item />
+                <Footer />
+              </>
+            } />
+          </Routes>
+        </div>
+      </Router>
+    </BrowserRouter>  
   );
 }
 
