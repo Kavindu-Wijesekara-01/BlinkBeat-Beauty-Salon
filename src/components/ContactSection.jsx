@@ -98,7 +98,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg text-white">Our Location</h4>
-                  <p className="text-white">123 Highlevel Road<br />Nugegoda.</p>
+                  <p className="text-gray-300">123 Highlevel Road<br />Nugegoda.</p>
                 </div>
               </div>
 
@@ -108,7 +108,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white text-lg">Phone Number</h4>
-                  <p className="text-white">0776091697</p>
+                  <p className="text-gray-300">0776091697</p>
                 </div>
               </div>
 
@@ -118,7 +118,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white text-lg">Email Address</h4>
-                  <p className="text-white">BlinkBeat@mysalon.com</p>
+                  <p className="text-gray-300">BlinkBeat@mysalon.com</p>
                 </div>
               </div>
 
@@ -128,7 +128,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white text-lg">Business Hours</h4>
-                  <p className="text-white">
+                  <p className="text-gray-300">
                     Monday - Friday: 9:00 AM - 7:00 PM<br />
                     Saturday: 9:00 AM - 5:00 PM<br />
                     Sunday: 10:00 AM - 4:00 PM
@@ -286,7 +286,7 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-linear-to-r from-pink-600 to-pink-300 text-white py-3 px-6 rounded-lg font-semibold hover:from-pink-700 hover:to-purple-700 transform hover:scale-105 transition duration-300 shadow-lg"
+                className="w-full bg-linear-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white md:px-6 px-8 py-3 rounded-md transform hover:scale-105 transition duration-300 shadow-lg"
               >
                 Send Message
               </button>

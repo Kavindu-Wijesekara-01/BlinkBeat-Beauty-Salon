@@ -1,4 +1,3 @@
-
 import { img } from 'framer-motion/client';
 import React, { useState,useEffect } from 'react';
 
@@ -58,6 +57,41 @@ const Services = () => {
     
   ];
 
+  // Function to scroll to ContactSection
+  const scrollToContactSection = (serviceName = '') => {
+    // First scroll to the contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // If a service name is provided, you could optionally auto-fill the service dropdown
+      // after a short delay to ensure the section is visible
+      if (serviceName) {
+        setTimeout(() => {
+          const serviceSelect = document.querySelector('select[name="service"]');
+          if (serviceSelect) {
+            // Find the option that matches the service name
+            const options = Array.from(serviceSelect.options);
+            const matchingOption = options.find(option => 
+              option.text.includes(serviceName) || 
+              serviceName.includes(option.text.split(' ')[0])
+            );
+            
+            if (matchingOption) {
+              serviceSelect.value = matchingOption.value;
+              // Trigger change event if needed
+              const event = new Event('change', { bubbles: true });
+              serviceSelect.dispatchEvent(event);
+            }
+          }
+        }, 800); // Delay to allow smooth scrolling to complete
+      }
+    }
+  };
+
   return (
     <section className="py-16 bg-white" id='services'>
       <div className="container mx-auto px-5 md:px-25">
@@ -104,7 +138,10 @@ const Services = () => {
                   {service.duration}
                 </span>
               </div>
-              <button className="w-full bg-linear-to-r from-pink-500 to-purple-500 hover:from-pink-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={() => scrollToContactSection(service.title)}
+                className="w-full bg-linear-to-r from-pink-500 to-purple-500 hover:from-pink-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
+              >
                 Book Now
               </button>
             </div>

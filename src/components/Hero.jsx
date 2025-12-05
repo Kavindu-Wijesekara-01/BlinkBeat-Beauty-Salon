@@ -1,11 +1,11 @@
 // Hero.jsx
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [counters, setCounters] = useState([0, 0, 0]);
   const statsRef = useRef(null);
-
 
   const particles = [
     { id: 1, size: 'w-2 h-2 md:w-3 md:h-3', color: 'bg-pink-300', delay: 0, duration: 25 },
@@ -74,8 +74,33 @@ const Hero = () => {
     };
   }, []);
 
+  // Function to scroll to ContactSection
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  // Function to scroll to Services section
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <div className="relative min-h-screen overflow-hidden bg-linear-to-br from-pink-900 via-black to-pink-800" id='home'>
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-br from-pink-900 via-black to-pink-800 md:py-8
+    max-[389px]:py-12 max-h-[700px]:py-12" 
+             
+    id='home'>
       
       {/* Animated Pink/Black Background Elements */}
       <div className="absolute inset-0">
@@ -127,7 +152,7 @@ const Hero = () => {
           
           {/* Premium Indicator */}
           <div 
-            className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg border border-pink-500/20 rounded-full px-6 py-3 mb-8 mt-12 transition-all duration-1000 ${
+            className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg border border-pink-500/20 rounded-full px-6 py-3 mb-8  xs:mt-10 transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
             }`}
           >
@@ -188,14 +213,21 @@ const Hero = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <button className="group relative bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white md:px-6 px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 md:w-auto sm:w-auto max-w-xs shadow-lg hover:shadow-pink-500/25">
+            {/* BOOK YOUR SESSION Button - Scrolls to Contact Section */}
+            <button 
+              onClick={scrollToContact}
+              className="group relative bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white md:px-6 px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 md:w-auto sm:w-auto max-w-xs shadow-lg hover:shadow-pink-500/25 cursor-pointer"
+            >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 BOOK YOUR SESSION
-                
               </span>
             </button>
 
-            <button className="group border border-pink-500/30 hover:border-pink-500/60 backdrop-blur-lg bg-pink-500/10 hover:bg-pink-500/20 text-white md:px-8 px-10 py-3 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 md:w-auto sm:w-auto max-w-xs">
+            {/* VIEW SERVICES Button - Scrolls to Services Section */}
+            <button 
+              onClick={scrollToServices}
+              className="group border border-pink-500/30 hover:border-pink-500/60 backdrop-blur-lg bg-pink-500/10 hover:bg-pink-500/20 text-white md:px-8 px-10 py-3 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 md:w-auto sm:w-auto max-w-xs cursor-pointer"
+            >
               <span className="flex items-center justify-center gap-2">
                 VIEW SERVICES
                 <svg className="w-4 h-4 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -365,4 +397,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
