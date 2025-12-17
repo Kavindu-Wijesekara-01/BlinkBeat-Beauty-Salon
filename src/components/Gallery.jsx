@@ -139,7 +139,7 @@ const Gallery = () => {
             <div 
               key={image.id}
               ref={el => imageRefs.current[index] = el}
-              className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 opacity-0"
+              className="group relative overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 opacity-0"
             >
               {/* Image Container */}
               <div className="relative overflow-hidden">
