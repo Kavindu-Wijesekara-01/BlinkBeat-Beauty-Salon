@@ -139,14 +139,14 @@ const Gallery = () => {
             <div 
               key={image.id}
               ref={el => imageRefs.current[index] = el}
-              className="group relative overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 opacity-0"
+              className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 opacity-0"
             >
               {/* Image Container */}
               <div className="relative overflow-hidden">
                 <img 
                   src={image.src} 
                   alt={image.alt}
-                  className={`w-full h-72 object-cover transition-all duration-300 ${
+                  className={`w-full h-72 object-cover rounded-xl transition-all duration-300 ${
                     loadedImages[image.id] ? 'opacity-100' : 'opacity-100'
                   }`}
                   onLoad={() => handleImageLoad(image.id)}

@@ -94,7 +94,7 @@ const Services = () => {
 
   return (
     <section className="py-16 bg-white" id='services'>
-      <div className="container mx-auto px-5 md:px-25">
+      <div className="container mx-auto px-5 ">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-5">
@@ -117,7 +117,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
           {salonServices.map((service) => (
             <div
               key={service.id}
